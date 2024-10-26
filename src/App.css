@@ -1,0 +1,279 @@
+/* Ensure that the container is centered and has padding */
+.game-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  min-height: 100vh; /* Ensure full viewport height */
+  padding: 20px;
+  background-image: url('./images/bg.jpg'); /* Set background image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+}
+
+/* Center the game title */
+.game-title {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  font-size: 80px; /* Adjust font size as needed */
+  color: rgb(231, 123, 46); /* Text color */
+  margin-bottom: 10px; /* Space below the title */
+  margin-top: 10px; /* Space below the title */
+  text-shadow: 2px 2px 4px rgb(111, 49, 5); /* Offset-x, Offset-y, Blur-radius, Color */
+  color: rgb(231, 123, 46); /* Text color */
+  text-shadow: 
+    1px 1px 0 #000, /* Right and down */
+    -1px -1px 0 #000, /* Left and up */
+    1px -1px 0 #000, /* Right and up */
+    -1px 1px 0 #000; /* Left and down */
+}
+
+/* Flex container for the images */
+.image-grid {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  flex-wrap: wrap; /* Allow wrapping if there are too many images */
+  gap: 10px; /* Space between images */
+  margin: 20px 0; /* Space above and below the image grid */
+}
+
+/* Individual image item */
+.image-item {
+  cursor: pointer;
+  border: 2px solid transparent; /* Default border */
+  transition: border 0.3s ease; /* Smooth border transition */
+}
+
+/* Border for selected item */
+.image-item.selected {
+  border: 2px solid blue; /* Blue border for selected item */
+}
+
+/* Game image styling */
+.game-image {
+  width: 100px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra spacing below images */
+}
+
+/* Button styling */
+.start-btn, .start-game-btn {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  margin: 10px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 20px 30px;
+  font-size: 25px;
+  cursor: pointer;
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Text color */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 3px solid #333; /* Darker and thicker border */
+  text-shadow: 
+    1px 1px 0 #000, /* Right and down */
+    -1px -1px 0 #000, /* Left and up */
+    1px -1px 0 #000, /* Right and up */
+    -1px 1px 0 #000; /* Left and down */
+}
+.next-btn, .show-answer-btn {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  margin: 10px;
+  padding: 10px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Text color */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 3px solid #333; /* Darker and thicker border */
+  text-shadow: 
+    1px 1px 0 #000, /* Right and down */
+    -1px -1px 0 #000, /* Left and up */
+    1px -1px 0 #000, /* Right and up */
+    -1px 1px 0 #000; /* Left and down */
+
+}
+.restart-btn {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  margin: 10px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-left: 43px;
+  padding: 20px 30px;
+  font-size: 25px;
+  cursor: pointer;
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Text color */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 3px solid #333; /* Darker and thicker border */
+  text-shadow: 
+    1px 1px 0 #000, /* Right and down */
+    -1px -1px 0 #000, /* Left and up */
+    1px -1px 0 #000, /* Right and up */
+    -1px 1px 0 #000; /* Left and down */
+}
+
+.start-btn {
+  background-color: #60d964; /* Color for start button */
+}
+
+.show-answer-btn {
+  background-color: #f0ad4e; /* Highlight color for show answer button */
+}
+
+.next-btn {
+  background-color: #6ccb6f; /* Color for next button */
+}
+
+.restart-btn {
+  background-color: #d9534f; /* Color for restart button */
+}
+
+.start-game-btn {
+  background-color: #5bc0de; /* Color for start game button */
+  margin-top: 20px;
+}
+
+/* Center all buttons */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Darken button color on hover */
+.start-btn:hover, .restart-btn:hover, .start-game-btn:hover {
+  background-color: #333; /* Darker color for hover effect */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+.next-btn:hover, .show-answer-btn:hover {
+  background-color: #333; /* Darker color for hover effect */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+/* Display the correct answer */
+.correct-answer {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  font-size: 18px;
+  color: green; /* Text color for correct answer */
+  margin: 10px 0;
+}
+
+/* Display game over message */
+.game-over {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  font-size: 24px;
+  color: rgb(190, 45, 45); /* Text color for game over message */
+  margin: 20px 0;
+}
+
+/* Text styles */
+.question-text {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  font-size: 20px;
+  color: #333; /* Dark grey text for questions */
+  margin: 20px 0;
+}
+
+.instruction-text {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  font-size: 16px;
+  color: #666; /* Medium grey text for instructions */
+  margin: 10px 0;
+}
+
+.score-text {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  font-size: 18px;
+  color: #e89343; /* Text color for score */
+  margin: 10px 0;
+}
+
+/* Container for the whole game */
+.game-wrapper {
+  background-color: #f9f9f9; /* Light background color */
+  border: 1px solid #ddd; /* Light border for the game container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 800px; /* Max width for larger screens */
+  margin: auto; /* Center the game container */
+  padding: 20px;
+}
+
+/* Overall game layout */
+.game-header {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  font-size: 24px;
+  color: #a35656; /* Text color for game header */
+  margin-bottom: 20px;
+}
+
+.game-footer {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  font-size: 14px;
+  color: #aaa; /* Light grey text for footer */
+  margin-top: 20px;
+}
+.image-item {
+  cursor: pointer;
+
+  transition: border 0.3s ease, border-width 0.3s ease; /* Smooth transition */
+}
+/* Border for correct item */
+.image-item.correct {
+  border: 4px solid green; /* Increased border size for correct item */
+}
+
+.category-title {
+  font-family: 'Times New Roman', serif; /* Use Times New Roman font */
+  font-size: 40px; /* Adjust font size as needed */
+  color: rgb(24, 69, 19); /* Text color */
+  margin-bottom: 20px; /* Space below the title */
+  margin-top: 20px; /* Space below the title */
+}
+/* Style for correct answer */
+.correct-answer {
+  color: green; /* Text color for correct answer */
+  font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Style for incorrect answer */
+.incorrect-answer {
+  color: red; /* Text color for incorrect answer */
+  font-weight: bold; /* Bold text for emphasis */
+}
+/* Add border to text letters */
+.total-score {
+  color: #205408; /* Choose the desired color */
+  font-size: 24px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the text bold */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Add some space above the score */
+  margin-bottom: 10px; /* Add some space below the score */
+  margin-left: 0px; /* Shift the text slightly to the left */
+}
+
+
+.game-over h2 {
+  font-size: 55px; /* Adjust the size as needed */
+  color: #ac2020; /* Optional: Set a color if needed */
+  font-weight: bold; /* Optional: Make the text bold */
+  margin-top: 10px; /* Add some space above the score */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
